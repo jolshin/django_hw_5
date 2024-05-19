@@ -16,7 +16,8 @@ from .serializers import SensorSerializer, SensorDetailSerializer, MeasurementSe
 # GET {{baseUrl}}/sensors/
 
 class SensorView(ListCreateAPIView):
-    quaryset = Sensor.objects.all()
+    
+    queryset = Sensor.objects.all()
     serializer_class = SensorSerializer
 
 
@@ -28,7 +29,7 @@ class SensorView(ListCreateAPIView):
 
 class DetailSensorView(RetrieveUpdateAPIView):
 
-    quaryset = Sensor.objects.all()
+    queryset = Sensor.objects.all()
     serializer_class = SensorDetailSerializer
 
 
@@ -37,5 +38,5 @@ class DetailSensorView(RetrieveUpdateAPIView):
 
 class MeasurementView(CreateAPIView):
     
-    quaryset = Measurement.objects.all()
+    queryset = Measurement.objects.all()
     serializer_class = MeasurementSerializer
